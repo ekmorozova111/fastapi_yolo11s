@@ -43,7 +43,7 @@ def init_db():
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     init_db()
-    app.state.model = ModelHandler("baseline.pt")
+    app.state.model = ModelHandler("yolo11s_best.pt")
     yield
 
 app = FastAPI(lifespan=lifespan)
